@@ -1,0 +1,2 @@
+# Tenable Vulnerability Scan of Azure Win11 Machines
+Microsoft seems to have recently updated the VM images created in the Azure environment to automatically set up rules to block incoming traffic from Tenable Vulnerability Scanners. This script run from within the Win11 VM Powershell will enable Tenable Vulnerability SCanning.
