@@ -11,15 +11,15 @@
     - Verifies SMB (TCP 445) is Listening
 
 .NOTES
-    Author        : Josh Madakor
-    Date Created  : 2024-09-09
-    Last Modified : 2024-09-09
+    Author        : Sean Santiago
+    Date Created  : 2025-12-23
+    Last Modified : 2025-12-23
     Version       : 1.0
 
 .TESTED ON
-    Date(s) Tested  : 2024-09-09
-    Tested By       : Josh Madakor
-    Systems Tested  : Windows Server 2019 Datacenter, Build 1809
+    Date(s) Tested  : 2025-12-23
+    Tested By       : Sean Santiago
+    Systems Tested  : Microsoft Azure Win11 Pro 24h2 VM
     PowerShell Ver. : 5.1.17763.6189
 
 .USAGE
