@@ -1,7 +1,8 @@
 <#
 .SYNOPSIS
     Modifies settings of Azure Win11 VM's to allow for Tenable
-    Vulnerability Scans. Specifically modifies the following:
+    Vulnerability Scans of the VM with Firewalls on.
+    Specifically modifies the following:
     - Enables Administrative Shares
     - Disables UAC Remote Token Filtering
     - Enables and Starts Required Windows Services
