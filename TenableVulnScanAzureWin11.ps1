@@ -2,7 +2,9 @@
 .SYNOPSIS
     Modifies settings of Azure Win11 VM's to allow for Tenable
     Vulnerability Scans of the VM with Firewalls on.
-    Specifically, explicitly allows SMB and RPC Ports Locally
+     Specifically modifies the following:
+    - Disables UAC Remote Token Filtering
+    - Explicitly allows SMB and RPC Ports Locally
 
 .NOTES
     Author        : Sean Santiago
@@ -23,9 +25,23 @@
 # Writes a visible banner to indicate the script has started
 Write-Host "=== Preparing system for Tenable authenticated scan ===" -ForegroundColor Cyan
 
+# ------------------------------------------------------------
+# 1. DISABLE UAC REMOTE TOKEN FILTERING
+# ------------------------------------------------------------
+
+# Writes a status message
+Write-Host "Disabling UAC remote restrictions..." -ForegroundColor Yellow
+
+# Creates or updates the LocalAccountTokenFilterPolicy registry value
+# This allows full admin tokens when connecting remotely (required for Tenable)
+reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" `
+    /v LocalAccountTokenFilterPolicy `
+    /t REG_DWORD `
+    /d 1 `
+    /f | Out-Null
 
 # ------------------------------------------------------------
-# EXPLICITLY ALLOW SMB AND RPC PORTS LOCALLY
+# 2. EXPLICITLY ALLOW SMB AND RPC PORTS LOCALLY
 # ------------------------------------------------------------
 
 # Writes a status message
