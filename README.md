@@ -33,6 +33,8 @@ No access, scan did not execute effectively
 
 Scan ran successfully and identified vulnerabilities, info items, and Audit items
 
+## Trying scan using only steps 4 and 5 
+
 
 
 
